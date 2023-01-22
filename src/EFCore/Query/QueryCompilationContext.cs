@@ -73,7 +73,8 @@ public class QueryCompilationContext
         Dependencies = dependencies;
         IsAsync = async;
         QueryTrackingBehavior = dependencies.QueryTrackingBehavior;
-        IsBuffering = ExecutionStrategy.Current?.RetriesOnFailure ?? dependencies.IsRetryingExecutionStrategy;
+        RetriesOnFailure = ExecutionStrategy.Current?.RetriesOnFailure ?? dependencies.IsRetryingExecutionStrategy;
+        IsBuffering = ExecutionStrategy.Current?.IsBuffering ?? dependencies.IsBufferingExecutionStrategy;
         Model = dependencies.Model;
         ContextOptions = dependencies.ContextOptions;
         ContextType = dependencies.ContextType;
@@ -117,6 +118,11 @@ public class QueryCompilationContext
     ///     A value indicating whether the underlying server query needs to pre-buffer all data.
     /// </summary>
     public virtual bool IsBuffering { get; }
+
+    /// <summary>
+    ///     ...
+    /// </summary>
+    public virtual bool RetriesOnFailure { get; }
 
     /// <summary>
     ///     A value indicating whether query filters are ignored in this query.

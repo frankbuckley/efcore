@@ -65,6 +65,7 @@ public sealed record QueryCompilationContextDependencies
         QueryableMethodTranslatingExpressionVisitorFactory = queryableMethodTranslatingExpressionVisitorFactory;
         QueryTranslationPostprocessorFactory = queryTranslationPostprocessorFactory;
         ShapedQueryCompilingExpressionVisitorFactory = shapedQueryCompilingExpressionVisitorFactory;
+        IsBufferingExecutionStrategy = executionStrategy.IsBuffering;
         IsRetryingExecutionStrategy = executionStrategy.RetriesOnFailure;
         ContextOptions = contextOptions;
         Logger = logger;
@@ -118,6 +119,11 @@ public sealed record QueryCompilationContextDependencies
     ///     Whether the configured execution strategy can retry.
     /// </summary>
     public bool IsRetryingExecutionStrategy { get; init; }
+
+    /// <summary>
+    ///     ...
+    /// </summary>
+    public bool IsBufferingExecutionStrategy { get; init; }
 
     /// <summary>
     ///     The context options.

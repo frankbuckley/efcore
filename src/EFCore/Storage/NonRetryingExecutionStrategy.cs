@@ -41,6 +41,11 @@ public sealed class NonRetryingExecutionStrategy : IExecutionStrategy
     private ExecutionStrategyDependencies Dependencies { get; }
 
     /// <summary>
+    /// ...
+    /// </summary>
+    public bool IsBuffering => false;
+
+    /// <summary>
     ///     Always returns false, since the <see cref="NonRetryingExecutionStrategy" /> does not perform retries.
     /// </summary>
     /// <remarks>

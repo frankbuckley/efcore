@@ -171,6 +171,11 @@ public abstract class ExecutionStrategy : IExecutionStrategy
     }
 
     /// <summary>
+    /// ...
+    /// </summary>
+    public virtual bool IsBuffering => RetriesOnFailure;
+
+    /// <summary>
     ///     Executes the specified operation and returns the result.
     /// </summary>
     /// <remarks>

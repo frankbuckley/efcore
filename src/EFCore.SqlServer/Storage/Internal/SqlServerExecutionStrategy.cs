@@ -33,6 +33,11 @@ public class SqlServerExecutionStrategy : IExecutionStrategy
     protected virtual ExecutionStrategyDependencies Dependencies { get; }
 
     /// <summary>
+    /// ...
+    /// </summary>
+    public virtual bool IsBuffering => RetriesOnFailure;
+
+    /// <summary>
     ///     This is an internal API that supports the Entity Framework Core infrastructure and not subject to
     ///     the same compatibility standards as public APIs. It may be changed or removed without notice in
     ///     any release. You should only use it directly in your code with extreme caution and knowing that

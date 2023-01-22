@@ -31,6 +31,11 @@ public interface IExecutionStrategy
     bool RetriesOnFailure { get; }
 
     /// <summary>
+    ///     TODO
+    /// </summary>
+    bool IsBuffering { get; }
+
+    /// <summary>
     ///     Executes the specified operation and returns the result.
     /// </summary>
     /// <remarks>
