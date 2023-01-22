@@ -33,7 +33,7 @@ public interface IExecutionStrategy
     /// <summary>
     ///     TODO
     /// </summary>
-    bool IsBuffering { get; }
+    bool IsBuffering => RetriesOnFailure;
 
     /// <summary>
     ///     Executes the specified operation and returns the result.
